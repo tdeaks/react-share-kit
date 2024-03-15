@@ -226,10 +226,10 @@ import { FacebookMessengerShare } from 'react-share-kit'
 👨‍💻 <b>Example</b>
 
 ```js
-import { EmailShare } from 'next-share'
+import { EmailShare } from 'react-share-kit'
 
 <EmailShare
-  url={'https://github.com/next-share'}
+  url={'https://github.com/ayda-tech/react-share-kit'}
   subject={'Next Share'}
   body="body"
 />
