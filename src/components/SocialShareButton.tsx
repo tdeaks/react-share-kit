@@ -115,10 +115,12 @@ const SocialShareButton = <LinkOptions,>({
   )
 }
 
-SocialShareButton.defaultProps = {
+const defaultProps = {
   disabledStyle: { opacity: 0.6 },
   openShareDialogOnClick: true,
   resetButtonStyle: true,
 }
+
+SocialShareButton.defaultProps = defaultProps
 
 export default SocialShareButton

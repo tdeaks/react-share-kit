@@ -186,36 +186,3 @@ export function getTumblrShareCount(
     },
   )
 }
-
-/**
- * Retrieves the share count of a URL on VK.com (VKontakte).
- *
- * @param shareUrl - The URL to retrieve the share count for.
- * @param callback - The callback function to be called with the share count.
- */
-export function getVKShareCount(
-  shareUrl: string,
-  callback: (shareCount?: number) => void,
-) {
-  if (!window.VK) {
-    window.VK = {}
-  }
-  window.VK.Share = {
-    count: (index, count) => window.VK.callbacks![index](count),
-  }
-  window.VK.callbacks = []
-
-  const url = 'https://vk.com/share.php'
-  const index = window.VK.callbacks.length
-
-  window.VK.callbacks.push(callback)
-
-  return jsonp(
-    url +
-      objectToGetParams({
-        act: 'count',
-        index,
-        url: shareUrl,
-      }),
-  )
-}

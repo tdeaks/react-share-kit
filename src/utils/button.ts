@@ -3,7 +3,6 @@ import {
   EmailLinkParams,
   FacebookLinkParams,
   FacebookMessengerLinkParams,
-  GapLinkParams,
   HatenaLinkParams,
   InstaPaperLinkParams,
   LineLinkParams,
@@ -16,7 +15,6 @@ import {
   TelegramLinkParams,
   TumblrLinkParams,
   TwitterLinkParams,
-  VKShareLinkParams,
   ViberLinkParams,
   WeiboShareLinkParams,
   WhatsAppLinkParams,
@@ -89,23 +87,6 @@ export function facebookMessengerLink(
       redirect_uri: redirectUri || url,
       app_id: appId,
       to,
-    })
-  )
-}
-
-/**
- * Generates a Gab Social link for composing a post.
- *
- * @param url - The URL to be shared within the post.
- * @param title - The title or text of the post.
- * @returns The Gab Social link for composing the post.
- */
-export function gabLink(url: string, { title }: GapLinkParams) {
-  return (
-    'https://gab.com/compose' +
-    transformObjectToParams({
-      url,
-      text: title,
     })
   )
 }
@@ -363,32 +344,6 @@ export function viberLink(url: string, { title, separator }: ViberLinkParams) {
     'viber://forward' +
     transformObjectToParams({
       text: title ? title + separator + url : url,
-    })
-  )
-}
-
-/**
- * Generates a VKontakte (VK) sharing link.
- *
- * @param url - The URL to be shared.
- * @param title - The title of the shared content (optional).
- * @param image - The URL of the image to be shared (optional).
- * @param noParse - Specifies whether to disable VK parsing of the shared content (optional).
- * @param noVkLinks - Specifies whether to disable VK-specific links in the shared content (optional).
- * @returns The VKontakte sharing link.
- */
-export function vkLink(
-  url: string,
-  { title, image, noParse, noVkLinks }: VKShareLinkParams,
-) {
-  return (
-    'https://vk.com/share.php' +
-    transformObjectToParams({
-      url,
-      title,
-      image,
-      noparse: noParse ? 1 : 0,
-      no_vk_links: noVkLinks ? 1 : 0,
     })
   )
 }

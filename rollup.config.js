@@ -5,7 +5,7 @@ import terser from '@rollup/plugin-terser'
 import dts from 'rollup-plugin-dts'
 import bundleSize from 'rollup-plugin-bundle-size'
 
-import packageJSON from './package.json' assert { type: 'json' }
+import packageJSON from './package.json' with { type: 'json' }
 
 // ======= FOR BUILDING NODE.JS PACKAGE =======
 // import builtins from 'builtin-modules'

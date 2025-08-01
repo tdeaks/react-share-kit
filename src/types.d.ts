@@ -16,8 +16,6 @@ export type FacebookMessengerLinkParams = {
   redirectUri?: string
   to?: string
 }
-// Gab Link: TYPE
-export type GapLinkParams = { title?: string }
 // Hatena Link: TYPE
 export type HatenaLinkParams = { title?: string }
 // InstaPaper Link: TYPE
@@ -62,13 +60,6 @@ export type TwitterLinkParams = {
 }
 // Viber Link: TYPE
 export type ViberLinkParams = { title?: string; separator?: string }
-// VK Link: TYPE
-export type VKShareLinkParams = {
-  title?: string
-  image?: string
-  noParse?: boolean
-  noVkLinks?: boolean
-}
 // Weibo Link: TYPE
 export type WeiboShareLinkParams = { title?: string; image?: string }
 // WhatsApp Link: TYPE

@@ -1,5 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
-
+.idea
 # dependencies
 node_modules
 
@@ -18,8 +18,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-package-lock.json
 
 /supports/create-react-app/node_modules
 /supports/create-react-app/package-lock.json
